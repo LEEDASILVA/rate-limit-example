@@ -11,7 +11,7 @@
 				}
 		}
 
-		handle /api* {
+		handle /apisomething* {
 				respond "API 200"
 		}
 }
