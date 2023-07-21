@@ -7,7 +7,7 @@
 				zone dynamic_zone {
 						key {http.request.remote_ip}
 						events 2
-						window 5s
+						window 1m
 				}
 		}
 

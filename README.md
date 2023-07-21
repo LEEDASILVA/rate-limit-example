@@ -28,3 +28,9 @@ Server: Caddy
 Date: Fri, 21 Jul 2023 14:57:07 GMT
 Content-Length: 0
 ```
+
+## Error handling
+
+http.handlers.rate_limit implements rate limiting functionality.
+
+If a rate limit is exceeded, an HTTP error with status 429 will be returned. This error can be handled using the conventional error handling routes in your config. An additional placeholder is made available, called {http.rate_limit.exceeded.name}, which you can use for logging or handling; it contains the name of the rate limit zone which limit was exceeded.
