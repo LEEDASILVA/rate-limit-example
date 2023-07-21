@@ -1,0 +1,17 @@
+{
+		order rate_limit before basicauth
+}
+
+:80 {
+		rate_limit {
+				zone dynamic_zone {
+						key {http.request.remote_ip}
+						events 2
+						window 5s
+				}
+		}
+
+		handle /api* {
+				respond "API 200"
+		}
+}
